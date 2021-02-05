@@ -1,0 +1,26 @@
+html{
+    color: red!important;
+}
+.page-enter-active{
+    transition: all .2s ease;
+}
+.page-leave-active{
+    transition: all .4s cubic-bezier(1.0, 0.5, 0.8, 1.0)
+}
+.page-enter,.page-leave-active{
+    transform: translateX(10px);
+    opacity: 0;
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+.new-enter-active,
+.new-leave-active {
+  transition: all ease 0.5s;
+  font-size: 20px;
+}
+.new-enter,
+.new-leave-to {
+ font-size: 40px;
+}
