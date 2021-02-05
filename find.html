@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+        <link href="css/style.css" rel="stylesheet" />
+	</head>
+
+	<body>
+        <header class="mui-bar mui-bar-nav nav-header">
+            <h1 class="mui-title">发现</h1>
+        </header>
+        <div class="mui-content">
+            <ul class="mui-table-view">
+                    <li class="mui-table-view-cell" id="circle">
+                        <a class="mui-navigate-right">
+                            朋友圈
+                        </a>
+                    </li>
+                    <li class="mui-table-view-cell" id="scan">
+                        <a class="mui-navigate-right">
+                            扫一扫
+                        </a>
+                    </li>
+                    <li class="mui-table-view-cell" id="shake">
+                        <a class="mui-navigate-right">
+                             摇一摇
+                        </a>
+                    </li>
+                </ul>
+        </div>
+		<script src="js/mui.js"></script>
+		<script type="text/javascript">
+			mui.init()
+            mui.plusReady(function(){
+               mui('#circle')[0].addEventListener("tap",function(){
+                  mui.openWindow({
+                      url:'friends.html',
+                      id:'friends',
+                    })
+                })
+                mui('#scan')[0].addEventListener("tap",function(){
+                   mui.openWindow({
+                       url:'scan.html',
+                       id:'scan',
+                     })
+                 })
+                 mui('#shake')[0].addEventListener("tap",function(){
+                    mui.openWindow({
+                        url:'shake.html',
+                        id:'shake',
+                      })
+                  })
+            })
+		</script>
+	</body>
+
+</html>

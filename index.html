@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+</head>
+<body>
+    <nav class="mui-bar mui-bar-tab">
+        <a href="wechart.html" class="mui-tab-item mui-active">
+            <span class="mui-icon mui-icon-weixin"></span>
+            <span class="mui-tab-label">微信</span>
+        </a>
+        <a href="address.html" class="mui-tab-item">
+            <span class="mui-icon mui-icon-contact"></span>
+            <span class="mui-tab-label">通讯录</span>
+        </a>
+        <a href="find.html" class="mui-tab-item">
+            <span class="mui-icon mui-icon-email"></span>
+            <span class="mui-tab-label">发现</span>
+        </a>
+        <a href="me.html" class="mui-tab-item">
+            <span class="mui-icon mui-icon-person"></span>
+            <span class="mui-tab-label">我</span>
+        </a>
+    </nav>
+    <script src="js/mui.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+        mui.plusReady(function () {
+            var styles={
+                top:'0px',
+                bottom:'50px'
+            }
+            
+            var ws=plus.webview.currentWebview();
+            var  page=['wechart.html','address.html','find.html','me.html']
+            for(var i=0;i<page.length;i++){
+                var item=plus.webview.create( page[i], page[i], styles );
+                item.hide()
+                ws.append(item)
+            }
+             plus.webview.show(page[0])
+             mui('.mui-bar-tab').on('tap','a',function(e){
+                 e.preventDefault()
+                 var href=this.getAttribute('href')
+                 // alert(href)
+                 plus.webview.show(href)
+             })
+        })
+    </script>
+</body>
+</html>
